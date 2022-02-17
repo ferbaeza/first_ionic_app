@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Reviews
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,21 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Reviews</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div id="container" *ngFor="let r of review">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ r.id }}</ion-card-title>
+        <ion-card-subtitle>{{ r.description }}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <p><strong>Puntuacion :</strong>{{ r.puntuation }}</p>
+        <p><strong>Cliente :</strong>{{ r.email }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
